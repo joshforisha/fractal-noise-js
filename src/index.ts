@@ -150,10 +150,6 @@ export function generateRectangle (width: number, height: number, options: Optio
   ))
 }
 
-function lerp (a: number, b: number, w: number): number {
-  return a + w * (b - a)
-}
-
 function processOptions (options: Options): Options {
   return {
     amplitude: typeof options.amplitude === 'number' ? options.amplitude : 1.0,
