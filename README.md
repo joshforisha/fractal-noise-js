@@ -22,12 +22,12 @@ generateCylinder(width, height, { frequency: 0.06, octaves: 8 })
 ![Medium frequency, high octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-medium-8.png)
 
 ```javascript
-generateLine(width)
+generateLine(width) // (Replicated across y-axis)
 ```
 ![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
 
 ```javascript
-generateLine(width, { frequency: 0.1 })
+generateLine(width, { frequency: 0.1 }) // (Replicated across x-axis)
 ```
 ![High frequency line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-high.png)
 
