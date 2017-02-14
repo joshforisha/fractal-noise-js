@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Fixed
+- Add size scaling to `generateLine`.
 
 ## [v0.1] – 2017-02-14
 ### Added

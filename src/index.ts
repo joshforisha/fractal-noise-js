@@ -125,7 +125,8 @@ export function generateCylinder (circumference: number, height: number, options
 
 export function generateLine (length: number, options: Options = {}): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const white = <Uint8Array> window.crypto.getRandomValues(new Uint8Array(length))
+  const size = Math.ceil(length * frequency)
+  const white = <Uint8Array> window.crypto.getRandomValues(new Uint8Array(size))
   const noise = generate1DNoiseFn(white)
   return generateArray(length, x =>
     generateArray(octaves, octave => {
