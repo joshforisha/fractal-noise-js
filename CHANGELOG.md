@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- Create `generateCuboid` for 3D rectangle.
 
 ## [v0.2] – 2017-02-14
 ### Changed

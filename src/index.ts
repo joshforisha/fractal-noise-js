@@ -100,14 +100,27 @@ function generateArray (count: number, fn: (index: number) => any): any[] {
   return items
 }
 
+export function generateCuboid (width: number, height: number, depth: number, options: Options = {}): Uint8Array[][] {
+  const { amplitude, frequency, octaves, persistence } = processOptions(options)
+  const white = generateArray(width, () => generateArray(height, () =>
+    window.crypto.getRandomValues(new Uint8Array(depth))
+  ))
+  const noise = generate3DNoiseFn(white)
+  return generateArray(width, x => generateArray(height, y => generateArray(depth, z =>
+    generateArray(octaves, octave => {
+      const freq = frequency * Math.pow(2, octave)
+      return noise(x * freq, y * freq, z * freq) * (amplitude * Math.pow(persistence, octave))
+    }).reduce((total, num) => total + num, 0)
+    / (2 - (1 / Math.pow(2, octaves - 1)))
+  )))
+}
+
 export function generateCylinder (circumference: number, height: number, options: Options = {}): Uint8Array[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
   const diameter = Math.ceil(circumference / Math.PI)
-  const white = generateArray(diameter, () =>
-    generateArray(height, () =>
-      window.crypto.getRandomValues(new Uint8Array(diameter))
-    )
-  )
+  const white = generateArray(diameter, () => generateArray(height, () =>
+    window.crypto.getRandomValues(new Uint8Array(diameter))
+  ))
   const noise = generate3DNoiseFn(white)
   return generateArray(circumference, x => generateArray(height, y =>
     generateArray(octaves, octave => {

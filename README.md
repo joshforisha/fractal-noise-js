@@ -50,6 +50,9 @@ The `options` object for each `generate` function contains the following propert
 * `octaves?: number` – Defaults to `1`
 * `persistence?: number` – Defaults to `0.5`
 
+##### `generateCuboid (width: number, height: number, depth: number, options: Options = {}): Uint8Array[][]`
+Generates a three-dimensional rectangular cuboid.
+
 ##### `generateCylinder (circumference: number, height: number, options: Options = {}): Uint8Array[]`
 Generates a two-dimensional noise field formed around a three-dimensional cylinder, such that it is continuous across the x-boundaries.
 
