@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "scripts": {
     "compile": "tsc",
-    "dev": "webpack-dev-server --content-base test --hot --inline",
     "test": "standardts src/**/*.ts",
     "watch": "tsc --watch"
   },
@@ -25,9 +24,6 @@
   "homepage": "https://github.com/joshforisha/fractal-noise-js#readme",
   "devDependencies": {
     "standardts": "^1",
-    "ts-loader": "^2",
-    "typescript": "^2",
-    "webpack": "^2",
-    "webpack-dev-server": "^2"
+    "typescript": "^2"
   }
 }
