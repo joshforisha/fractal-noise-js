@@ -8,21 +8,31 @@ Fractal noise library
 ## Install
 
     npm install fractal-noise
-    
+
 ## Examples
 
 ```javascript
-createLine(width)
+generateCylinder(width, height, { frequency: 0.04, octaves: 2 })
+```
+![Low frequency, double octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-low-2.png)
+
+```javascript
+generateCylinder(width, height, { frequency: 0.06, octaves: 8 })
+```
+![Medium frequency, high octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-medium-8.png)
+
+```javascript
+generateLine(width)
 ```
 ![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
 
 ```javascript
-createRectangle(width, height)
+generateRectangle(width, height)
 ```
 ![Default rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-default.png)
 
 ```javascript
-createRectangle(width, height, { frequency: 0.04, octaves: 8 })
+generateRectangle(width, height, { frequency: 0.04, octaves: 8 })
 ```
 ![Low frequency, high octave rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-low-8.png)
 
