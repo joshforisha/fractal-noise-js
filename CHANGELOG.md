@@ -2,9 +2,13 @@
 
 ## [Unreleased]
 
+## [v0.5] – 2017-02-14
+### Changed
+- Remove ".js" from "main" file in `package.json`.
+
 ## [v0.4] – 2017-02-14
 ### Added
-- Output type declaration file.
+- Add output of type declaration file.
 
 ## [v0.3] – 2017-02-14
 ### Added
@@ -25,7 +29,8 @@
 ### Added
 - Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
 
-[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.4...HEAD
+[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.5...HEAD
+[v0.5]: https://github.com/joshforisha/fractal-noise-js/compare/v0.4...v0.5
 [v0.4]: https://github.com/joshforisha/fractal-noise-js/compare/v0.3...v0.4
 [v0.3]: https://github.com/joshforisha/fractal-noise-js/compare/v0.2...v0.3
 [v0.2]: https://github.com/joshforisha/fractal-noise-js/compare/v0.1...v0.2
