@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+
+## [v0.2] – 2017-02-14
 ### Changed
 - Constrain noise source more accurately for `generateCylinder`.
 
@@ -14,5 +16,6 @@
 ### Added
 - Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
 
-[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.1...HEAD
+[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.2...HEAD
+[v0.2]: https://github.com/joshforisha/fractal-noise-js/compare/v0.1...v0.2
 [v0.1]: https://github.com/joshforisha/fractal-noise-js/releases/tag/v0.1
