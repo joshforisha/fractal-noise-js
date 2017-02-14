@@ -27,7 +27,7 @@ generateLine(width) // (Replicated across y-axis)
 ![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
 
 ```javascript
-generateLine(width, { frequency: 0.1 }) // (Replicated across x-axis)
+generateLine(height, { frequency: 0.1 }) // (Replicated across x-axis)
 ```
 ![High frequency line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-high.png)
 
