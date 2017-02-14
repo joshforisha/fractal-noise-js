@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Fixed
 - Add size scaling to `generateLine`.
+- Use correct operator for 3D noise `y0` calculation.
 
 ## [v0.1] – 2017-02-14
 ### Added

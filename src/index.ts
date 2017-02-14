@@ -56,7 +56,7 @@ function generate3DNoiseFn (source: Uint8Array[][]): (ox: number, oy: number, oz
     const [x, y, z] = [ox % sx + sx, oy % sy + sy, oz % sz + sz]
     const [_x, _y, _z] = [Math.floor(x), Math.floor(y), Math.floor(z)]
     const [xi, yi, zi] = [x - _x, y - _y, z - _z]
-    const [x0, y0, z0] = [((_x - 1) + sx) % sx, ((_y - 1) + sy) & sy, ((_z - 1) + sz) % sz]
+    const [x0, y0, z0] = [((_x - 1) + sx) % sx, ((_y - 1) + sy) % sy, ((_z - 1) + sz) % sz]
     const [x1, y1, z1] = [_x % sx, _y % sy, _z % sz]
     const [x2, y2, z2] = [(_x + 1) % sx, (_y + 1) % sy, (_z + 1) % sz]
     const [x3, y3, z3] = [(_x + 2) % sx, (_y + 2) % sy, (_z + 2) % sz]
