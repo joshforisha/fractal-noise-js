@@ -102,10 +102,11 @@ function generateArray (count: number, fn: (index: number) => any): any[] {
 
 export function generateCylinder (circumference: number, height: number, options: Options = {}): Uint8Array[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const size = Math.ceil(Math.max(circumference, height) * frequency)
-  const white = generateArray(size, () =>
-    generateArray(size, () =>
-      window.crypto.getRandomValues(new Uint8Array(size))
+  const diameterSize = Math.ceil(circumference / Math.PI * frequency)
+  const heightSize = Math.ceil(height * frequency)
+  const white = generateArray(diameterSize, () =>
+    generateArray(heightSize, () =>
+      window.crypto.getRandomValues(new Uint8Array(diameterSize))
     )
   )
   const noise = generate3DNoiseFn(white)

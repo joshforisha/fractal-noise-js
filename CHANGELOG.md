@@ -1,6 +1,9 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- Constrain noise source more accurately for `generateCylinder`.
+
 ### Fixed
 - Add size scaling to `generateLine`.
 - Use correct operator for 3D noise `y0` calculation.
