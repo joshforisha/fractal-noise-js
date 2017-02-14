@@ -1,0 +1,33 @@
+{
+  "name": "fractal-noise",
+  "version": "0.1.0-pre.1",
+  "description": "Fractal noise library",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "dev": "webpack-dev-server --content-base test --hot --inline",
+    "test": "standardts src/**/*.ts",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshforisha/fractal-noise-js.git"
+  },
+  "keywords": [
+    "noise",
+    "procedural-generation"
+  ],
+  "author": "Josh Forisha <josh@forisha.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/joshforisha/fractal-noise-js/issues"
+  },
+  "homepage": "https://github.com/joshforisha/fractal-noise-js#readme",
+  "devDependencies": {
+    "standardts": "^1",
+    "ts-loader": "^2",
+    "typescript": "^2",
+    "webpack": "^2",
+    "webpack-dev-server": "^2"
+  }
+}
