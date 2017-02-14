@@ -51,7 +51,7 @@ The `options` object for each `generate` function contains the following propert
 * `persistence?: number` – Defaults to `0.5`
 
 ##### `generateCuboid (width: number, height: number, depth: number, options: Options = {}): Uint8Array[][]`
-Generates a three-dimensional rectangular cuboid.
+Generates a three-dimensional noise field for a rectangular cuboid.
 
 ##### `generateCylinder (circumference: number, height: number, options: Options = {}): Uint8Array[]`
 Generates a two-dimensional noise field formed around a three-dimensional cylinder, such that it is continuous across the x-boundaries.
@@ -61,3 +61,6 @@ Generates a one-dimensional noise field.
 
 ##### `generateRectangle (width: number, height: number, options: Options = {}): Uint8Array[]`
 Generates a two-dimensional noise field isolated to `width` and `height` (non-continuous noise).
+
+##### `generateSphere (circumference: number, options: Options = {}): Uint8Array[]`
+Generates a two-dimensional noise field formed on the surface of a three-dimensional sphere.

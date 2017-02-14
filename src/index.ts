@@ -122,14 +122,13 @@ export function generateCylinder (circumference: number, height: number, options
     window.crypto.getRandomValues(new Uint8Array(diameter))
   ))
   const noise = generate3DNoiseFn(white)
+  const radius = circumference / TWO_PI
   return generateArray(circumference, x => generateArray(height, y =>
     generateArray(octaves, octave => {
       const freq = frequency * Math.pow(2, octave)
       const nx = x / circumference
-      const r = circumference / TWO_PI
       const rdx = nx * TWO_PI
-      const a = r * Math.sin(rdx)
-      const b = r * Math.cos(rdx)
+      const [a, b] = [radius * Math.sin(rdx), radius * Math.cos(rdx)]
       return noise(a * freq, b * freq, y * freq) * (amplitude * Math.pow(persistence, octave))
     }).reduce((total, num) => total + num, 0)
     / (2 - (1 / Math.pow(2, octaves - 1)))
@@ -157,6 +156,30 @@ export function generateRectangle (width: number, height: number, options: Optio
     generateArray(octaves, octave => {
       const freq = frequency * Math.pow(2, octave)
       return noise(x * freq, y * freq) * (amplitude * Math.pow(persistence, octave))
+    }).reduce((total, num) => total + num, 0)
+    / (2 - (1 / Math.pow(2, octaves - 1)))
+  ))
+}
+
+export function generateSphere (circumference: number, options: Options = {}): Uint8Array[] {
+  const { amplitude, frequency, octaves, persistence } = processOptions(options)
+  const diameter = Math.ceil(circumference / Math.PI)
+  const white = generateArray(diameter, () => generateArray(diameter, () =>
+    window.crypto.getRandomValues(new Uint8Array(diameter))
+  ))
+  const noise = generate3DNoiseFn(white)
+  const radius = circumference / TWO_PI
+  return generateArray(circumference, x => generateArray(circumference, y =>
+    generateArray(octaves, octave => {
+      const freq = frequency * Math.pow(2, octave)
+      const [nx, ny] = [x / circumference, y / circumference]
+      const [rdx, rdy] = [nx * TWO_PI, ny * TWO_PI]
+      const sinY = Math.sin(rdy + Math.PI)
+      const sinRds = 2 * Math.PI
+      const a = sinRds * Math.sin(rdx) * sinY
+      const b = sinRds * Math.cos(rdx) * sinY
+      const d = sinRds * Math.cos(rdy)
+      return noise(a * freq, b * freq, d * freq) * (amplitude * Math.pow(persistence, octave))
     }).reduce((total, num) => total + num, 0)
     / (2 - (1 / Math.pow(2, octaves - 1)))
   ))
