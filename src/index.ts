@@ -102,11 +102,10 @@ function generateArray (count: number, fn: (index: number) => any): any[] {
 
 export function generateCylinder (circumference: number, height: number, options: Options = {}): Uint8Array[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const diameterSize = Math.ceil(circumference / Math.PI * frequency)
-  const heightSize = Math.ceil(height * frequency)
-  const white = generateArray(diameterSize, () =>
-    generateArray(heightSize, () =>
-      window.crypto.getRandomValues(new Uint8Array(diameterSize))
+  const diameter = Math.ceil(circumference / Math.PI)
+  const white = generateArray(diameter, () =>
+    generateArray(height, () =>
+      window.crypto.getRandomValues(new Uint8Array(diameter))
     )
   )
   const noise = generate3DNoiseFn(white)
@@ -126,8 +125,7 @@ export function generateCylinder (circumference: number, height: number, options
 
 export function generateLine (length: number, options: Options = {}): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const size = Math.ceil(length * frequency)
-  const white = <Uint8Array> window.crypto.getRandomValues(new Uint8Array(size))
+  const white = <Uint8Array> window.crypto.getRandomValues(new Uint8Array(length))
   const noise = generate1DNoiseFn(white)
   return generateArray(length, x =>
     generateArray(octaves, octave => {
@@ -140,8 +138,7 @@ export function generateLine (length: number, options: Options = {}): number[] {
 
 export function generateRectangle (width: number, height: number, options: Options = {}): Uint8Array[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const size = Math.ceil(Math.max(width, height) * frequency)
-  const white = generateArray(size, () => window.crypto.getRandomValues(new Uint8Array(size)))
+  const white = generateArray(width, () => window.crypto.getRandomValues(new Uint8Array(height)))
   const noise = generate2DNoiseFn(white)
   return generateArray(width, x => generateArray(height, y =>
     generateArray(octaves, octave => {
