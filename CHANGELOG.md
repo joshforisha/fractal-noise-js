@@ -2,4 +2,4 @@
 
 ## Unreleased
 ### Added
-- Basic linear interpolation based functions `generateCylinder`, `generateLine`, `generateRectangle`.
+- Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
