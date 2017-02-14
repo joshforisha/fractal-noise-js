@@ -1,6 +1,6 @@
 {
   "name": "fractal-noise",
-  "version": "0.1.0-pre.2",
+  "version": "0.1.0",
   "description": "Fractal noise library",
   "main": "lib/index.js",
   "scripts": {
