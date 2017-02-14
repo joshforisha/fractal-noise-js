@@ -1,6 +1,6 @@
 const TWO_PI = 2 * Math.PI
 
-interface Options {
+export interface Options {
   amplitude?: number
   frequency?: number
   octaves?: number

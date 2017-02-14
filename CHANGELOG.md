@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v0.4] – 2017-02-14
+### Added
+- Output type declaration file.
+
 ## [v0.3] – 2017-02-14
 ### Added
 - Create `generateCuboid` for 3D rectangle.
@@ -21,7 +25,8 @@
 ### Added
 - Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
 
-[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.3...HEAD
+[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.4...HEAD
+[v0.4]: https://github.com/joshforisha/fractal-noise-js/compare/v0.3...v0.4
 [v0.3]: https://github.com/joshforisha/fractal-noise-js/compare/v0.2...v0.3
 [v0.2]: https://github.com/joshforisha/fractal-noise-js/compare/v0.1...v0.2
 [v0.1]: https://github.com/joshforisha/fractal-noise-js/releases/tag/v0.1
