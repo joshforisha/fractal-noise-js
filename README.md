@@ -27,6 +27,11 @@ generateLine(width)
 ![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
 
 ```javascript
+generateLine(width, { frequency: 0.1 })
+```
+![High frequency line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-high.png)
+
+```javascript
 generateRectangle(width, height)
 ```
 ![Default rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-default.png)
