@@ -1,8 +1,13 @@
 # Change Log
 
 ## [Unreleased]
+
+## [v0.9] – 2017-02-16
 ### Changed
 - Cleanup code based on TypeScript added compiler options.
+
+### Fixed
+- Fix `rdy` calculation in `makeSphereSurface`.
 
 ## [v0.7] – 2017-02-15
 ### Fixed
@@ -42,7 +47,8 @@
 ### Added
 - Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
 
-[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.7...HEAD
+[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.9...HEAD
+[v0.9]: https://github.com/joshforisha/fractal-noise-js/compare/v0.7...v0.9
 [v0.7]: https://github.com/joshforisha/fractal-noise-js/compare/v0.6...v0.7
 [v0.6]: https://github.com/joshforisha/fractal-noise-js/compare/v0.5...v0.6
 [v0.5]: https://github.com/joshforisha/fractal-noise-js/compare/v0.4...v0.5

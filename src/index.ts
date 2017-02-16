@@ -113,7 +113,7 @@ export function makeSphereSurface (circumference: number, noise3: Noise3Fn, opti
       for (let octave = 0; octave < octaves; octave++) {
         const freq = frequency * Math.pow(2, octave)
         const [nx, ny] = [x / circumference, y / circumference]
-        const [rdx, rdy] = [nx * TWO_PI, ny * TWO_PI]
+        const [rdx, rdy] = [nx * TWO_PI, ny * Math.PI]
         const sinY = Math.sin(rdy + Math.PI)
         const a = TWO_PI * Math.sin(rdx) * sinY
         const b = TWO_PI * Math.cos(rdx) * sinY
