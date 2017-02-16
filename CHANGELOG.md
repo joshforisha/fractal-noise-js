@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Changed
+- Cleanup code based on TypeScript added compiler options.
 
 ## [v0.7] – 2017-02-15
 ### Fixed
