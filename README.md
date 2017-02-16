@@ -14,32 +14,32 @@ Fractal noise functions designed to be used with any noise generation algorithm.
 These images were all generated using basic value noise with `width: 888` and `height: 111`.
 
 ```javascript
-cylinderSurface(width, height, valueNoise3D, { frequency: 0.04, octaves: 2 })
+makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.04, octaves: 2 })
 ```
 ![Low frequency, double octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-low-2.png)
 
 ```javascript
-cylinderSurface(width, height, valueNoise3D, { frequency: 0.06, octaves: 8 })
+makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.06, octaves: 8 })
 ```
 ![Medium frequency, high octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-medium-8.png)
 
 ```javascript
-line(width, valueNoise1D) // (Replicated across y-axis)
+makeLine(width, valueNoise1D) // (Replicated across y-axis)
 ```
 ![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
 
 ```javascript
-line(height, valueNoise1D, { frequency: 0.1 }) // (Replicated across x-axis)
+makeLine(height, valueNoise1D, { frequency: 0.1 }) // (Replicated across x-axis)
 ```
 ![High frequency line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-high.png)
 
 ```javascript
-rectangle(width, height, valueNoise2D)
+makeRectangle(width, height, valueNoise2D)
 ```
 ![Default rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-default.png)
 
 ```javascript
-rectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
+makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
 ```
 ![Low frequency, high octave rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-low-8.png)
 
