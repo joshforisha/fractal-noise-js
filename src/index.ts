@@ -15,7 +15,7 @@ export type Options = {
   persistence?: number
 }
 
-export function cuboid (
+export function makeCuboid (
   width: number,
   height: number,
   depth: number,
@@ -41,7 +41,7 @@ export function cuboid (
   return field
 }
 
-export function cylinderSurface (
+export function makeCylinderSurface (
   circumference: number,
   height: number,
   noise3: Noise3Fn,
@@ -68,7 +68,7 @@ export function cylinderSurface (
   return field
 }
 
-export function line (length: number, noise1: Noise1Fn, options: Options = {}): number[] {
+export function makeLine (length: number, noise1: Noise1Fn, options: Options = {}): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
   const field = new Array(length)
   for (let x = 0; x < length; x++) {
@@ -82,7 +82,7 @@ export function line (length: number, noise1: Noise1Fn, options: Options = {}): 
   return field
 }
 
-export function rectangle (
+export function makeRectangle (
   width: number,
   height: number,
   noise2: Noise2Fn,
@@ -104,7 +104,7 @@ export function rectangle (
   return field
 }
 
-export function sphereSurface (circumference: number, noise3: Noise3Fn, options: Options = {}): number[] {
+export function makeSphereSurface (circumference: number, noise3: Noise3Fn, options: Options = {}): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
   const diameter = Math.ceil(circumference / Math.PI)
   const radius = circumference / TWO_PI

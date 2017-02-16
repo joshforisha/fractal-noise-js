@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [v0.7] – 2017-02-15
+### Fixed
+- Rename functions to match API because I'm a dummy and forgot to do that.
+
 ## [v0.6] – 2017-02-15
 ### Changed
 - Convert to fractal wrapper library.
@@ -36,7 +40,8 @@
 ### Added
 - Create functions `generateCylinder`, `generateLine`, `generateRectangle`.
 
-[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.6...HEAD
+[Unreleased]: https://github.com/joshforisha/fractal-noise-js/compare/v0.7...HEAD
+[v0.6]: https://github.com/joshforisha/fractal-noise-js/compare/v0.6...v0.7
 [v0.6]: https://github.com/joshforisha/fractal-noise-js/compare/v0.5...v0.6
 [v0.5]: https://github.com/joshforisha/fractal-noise-js/compare/v0.4...v0.5
 [v0.4]: https://github.com/joshforisha/fractal-noise-js/compare/v0.3...v0.4
