@@ -48,7 +48,6 @@ export function makeCylinderSurface (
   options: Options = {}
 ): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const diameter = Math.ceil(circumference / Math.PI)
   const radius = circumference / TWO_PI
   const field = new Array(circumference)
   for (let x = 0; x < circumference; x++) {
@@ -106,8 +105,6 @@ export function makeRectangle (
 
 export function makeSphereSurface (circumference: number, noise3: Noise3Fn, options: Options = {}): number[] {
   const { amplitude, frequency, octaves, persistence } = processOptions(options)
-  const diameter = Math.ceil(circumference / Math.PI)
-  const radius = circumference / TWO_PI
   const field = new Array(circumference)
   for (let x = 0; x < circumference; x++) {
     field[x] = new Array(circumference)
@@ -118,10 +115,9 @@ export function makeSphereSurface (circumference: number, noise3: Noise3Fn, opti
         const [nx, ny] = [x / circumference, y / circumference]
         const [rdx, rdy] = [nx * TWO_PI, ny * TWO_PI]
         const sinY = Math.sin(rdy + Math.PI)
-        const sinRds = 2 * Math.PI
-        const a = sinRds * Math.sin(rdx) * sinY
-        const b = sinRds * Math.cos(rdx) * sinY
-        const d = sinRds * Math.cos(rdy)
+        const a = TWO_PI * Math.sin(rdx) * sinY
+        const b = TWO_PI * Math.cos(rdx) * sinY
+        const d = TWO_PI * Math.cos(rdy)
         value += noise3(a * freq, b * freq, d * freq) * (amplitude * Math.pow(persistence, octave))
       }
       field[x][y] = value / (2 - (1 / Math.pow(2, octaves - 1)))
