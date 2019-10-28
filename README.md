@@ -45,13 +45,13 @@ makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
 
 ## API
 
-##### `type Options = { amplitude?, frequency?, octaves?, persistence? }`
+##### `interface Options { amplitude?; frequency?; octaves?; persistence? }`
 * `amplitude?: number` – Defaults to `1.0`
 * `frequency?: number` – Defaults to `1.0`
 * `octaves?: number` – Defaults to `1`
 * `persistence?: number` – Defaults to `0.5`
 
-##### `makeCuboid (width, height, depth, noise3, options?): number[][]`
+##### `makeCuboid(width, height, depth, noise3, options?): number[][]`
 
 * `width: number`
 * `height: number`
@@ -70,7 +70,7 @@ Generates a three-dimensional noise field for a rectangular cuboid.
 
 Generates a two-dimensional noise field formed around a three-dimensional cylinder, such that it is continuous across the x-boundaries.
 
-##### `makeLine (length, noise1, options?): number[]`
+##### `makeLine(length, noise1, options?): number[]`
 
 * `length: number`
 * `noise1: (x: number) => number`
@@ -78,7 +78,7 @@ Generates a two-dimensional noise field formed around a three-dimensional cylind
 
 Generates a one-dimensional noise field.
 
-##### `makeRectangle (width, height, noise2, options?): number[][]`
+##### `makeRectangle(width, height, noise2, options?): number[][]`
 
 * `width: number`
 * `height: number`
@@ -87,7 +87,7 @@ Generates a one-dimensional noise field.
 
 Generates a two-dimensional noise field isolated to `width` and `height` (non-continuous noise).
 
-##### `makeSphereSurface (circumference, options?): number[][]`
+##### `makeSphereSurface(circumference, options?): number[][]`
 
 * `circumference: number`
 * `noise3: (x: number, y: number, z: number) => number`
