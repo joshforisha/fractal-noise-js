@@ -5,7 +5,7 @@
   "main": "lib/index",
   "scripts": {
     "compile": "tsc",
-    "test": "standardts src/**/*.ts",
+    "format": "prettier --parser typescript --write src/*.ts",
     "watch": "tsc --watch"
   },
   "repository": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/joshforisha/fractal-noise-js#readme",
   "devDependencies": {
-    "standardts": "^1",
-    "typescript": "^2"
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
   }
 }
