@@ -16,32 +16,32 @@ These images were all generated using basic value noise with `width: 888` and `h
 ```javascript
 makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.04, octaves: 2 })
 ```
-![Low frequency, double octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-low-2.png)
+![Low frequency, double octave cylinder](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/cylinder-low-2.png)
 
 ```javascript
 makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.06, octaves: 8 })
 ```
-![Medium frequency, high octave cylinder](https://github.com/joshforisha/fractal-noise-js/blob/master/images/cylinder-medium-8.png)
+![Medium frequency, high octave cylinder](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/cylinder-medium-8.png)
 
 ```javascript
 makeLine(width, valueNoise1D) // (Replicated across y-axis)
 ```
-![Default line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-default.png)
+![Default line](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/line-default.png)
 
 ```javascript
 makeLine(height, valueNoise1D, { frequency: 0.1 }) // (Replicated across x-axis)
 ```
-![High frequency line](https://github.com/joshforisha/fractal-noise-js/blob/master/images/line-high.png)
+![High frequency line](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/line-high.png)
 
 ```javascript
 makeRectangle(width, height, valueNoise2D)
 ```
-![Default rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-default.png)
+![Default rectangle](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/rectangle-default.png)
 
 ```javascript
 makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
 ```
-![Low frequency, high octave rectangle](https://github.com/joshforisha/fractal-noise-js/blob/master/images/rectangle-low-8.png)
+![Low frequency, high octave rectangle](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/rectangle-low-8.png)
 
 ## API
 
