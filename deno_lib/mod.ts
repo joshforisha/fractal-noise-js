@@ -143,17 +143,18 @@ export function makeSphereSurface(
   );
   const field = new Array(circumference);
   for (let x = 0; x < circumference; x++) {
-    field[x] = new Array(circumference);
-    for (let y = 0; y < circumference; y++) {
+    const circumferenceSemi = circumference / 2
+    field[x] = new Array(circumferenceSemi);
+    for (let y = 0; y < circumferenceSemi; y++) {
+      const [nx, ny] = [x / circumference, y / circumferenceSemi];
+      const [rdx, rdy] = [nx * TWO_PI, ny * Math.PI];
+      const sinY = Math.sin(rdy + Math.PI);
+      const a = TWO_PI * Math.sin(rdx) * sinY;
+      const b = TWO_PI * Math.cos(rdx) * sinY;
+      const d = TWO_PI * Math.cos(rdy);
       let value = 0.0;
       for (let octave = 0; octave < octaves; octave++) {
         const freq = frequency * Math.pow(2, octave);
-        const [nx, ny] = [x / circumference, y / circumference];
-        const [rdx, rdy] = [nx * TWO_PI, ny * Math.PI];
-        const sinY = Math.sin(rdy + Math.PI);
-        const a = TWO_PI * Math.sin(rdx) * sinY;
-        const b = TWO_PI * Math.cos(rdx) * sinY;
-        const d = TWO_PI * Math.cos(rdy);
         value += noise3(a * freq, b * freq, d * freq) *
           (amplitude * Math.pow(persistence, octave));
       }
