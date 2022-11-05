@@ -2,7 +2,7 @@
 
 Fractal noise functions designed to be used with any noise generation algorithm.
 
-* Deno module: [https://deno.land/x/fractal_noise](https://deno.land.x/fractal_noise)
+* Deno module: [https://deno.land/x/fractal_noise](https://deno.land/x/fractal_noise)
 * NPM package: [fractal-noise](https://www.npmjs.com/package/fractal-noise)
 
 ## Examples
