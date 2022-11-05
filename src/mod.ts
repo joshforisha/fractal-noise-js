@@ -15,31 +15,27 @@ export interface Options {
   frequency: number;
   octaves: number;
   persistence: number;
+  scale?: (x: number) => number;
 }
 
-function processOptions(options: Partial<Options>): Options {
-  return {
-    amplitude: typeof options.amplitude === "number" ? options.amplitude : 1.0,
-    frequency: typeof options.frequency === "number" ? options.frequency : 1.0,
-    octaves: typeof options.octaves === "number"
-      ? Math.floor(options.octaves)
-      : 1,
-    persistence: typeof options.persistence === "number"
-      ? options.persistence
-      : 0.5,
-  };
-}
+const defaultAmplitude = 1.0;
+const defaultFrequency = 1.0;
+const defaultOctaves = 1;
+const defaultPersistence = 0.5;
 
 export function makeCuboid(
   width: number,
   height: number,
   depth: number,
   noise3: Noise3Fn,
-  options: Partial<Options> = {},
+  {
+    amplitude = defaultAmplitude,
+    frequency = defaultFrequency,
+    octaves = defaultOctaves,
+    persistence = defaultPersistence,
+    scale,
+  }: Partial<Options> = {},
 ): number[][] {
-  const { amplitude, frequency, octaves, persistence } = processOptions(
-    options,
-  );
   const field = new Array(width);
   for (let x = 0; x < width; x++) {
     field[x] = new Array(height);
@@ -53,6 +49,7 @@ export function makeCuboid(
             (amplitude * Math.pow(persistence, octave));
         }
         field[x][y][z] = value / (2 - 1 / Math.pow(2, octaves - 1));
+        if (scale) field[x][y][z] = scale(field[x][y][z]);
       }
     }
   }
@@ -63,11 +60,14 @@ export function makeCylinderSurface(
   circumference: number,
   height: number,
   noise3: Noise3Fn,
-  options: Partial<Options> = {},
+  {
+    amplitude = defaultAmplitude,
+    frequency = defaultFrequency,
+    octaves = defaultOctaves,
+    persistence = defaultPersistence,
+    scale,
+  }: Partial<Options> = {},
 ): number[] {
-  const { amplitude, frequency, octaves, persistence } = processOptions(
-    options,
-  );
   const radius = circumference / TWO_PI;
   const field = new Array(circumference);
   for (let x = 0; x < circumference; x++) {
@@ -83,6 +83,7 @@ export function makeCylinderSurface(
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
+      if (scale) field[x][y] = scale(field[x][y]);
     }
   }
   return field;
@@ -91,11 +92,14 @@ export function makeCylinderSurface(
 export function makeLine(
   length: number,
   noise1: Noise1Fn,
-  options: Partial<Options> = {},
+  {
+    amplitude = defaultAmplitude,
+    frequency = defaultFrequency,
+    octaves = defaultOctaves,
+    persistence = defaultPersistence,
+    scale,
+  }: Partial<Options> = {},
 ): number[] {
-  const { amplitude, frequency, octaves, persistence } = processOptions(
-    options,
-  );
   const field = new Array(length);
   for (let x = 0; x < length; x++) {
     let value = 0.0;
@@ -104,6 +108,7 @@ export function makeLine(
       value += noise1(x * freq) * (amplitude * Math.pow(persistence, octave));
     }
     field[x] = value / (2 - 1 / Math.pow(2, octaves - 1));
+    if (scale) field[x] = scale(field[x]);
   }
   return field;
 }
@@ -112,11 +117,14 @@ export function makeRectangle(
   width: number,
   height: number,
   noise2: Noise2Fn,
-  options: Partial<Options> = {},
+  {
+    amplitude = defaultAmplitude,
+    frequency = defaultFrequency,
+    octaves = defaultOctaves,
+    persistence = defaultPersistence,
+    scale,
+  }: Partial<Options> = {},
 ): number[] {
-  const { amplitude, frequency, octaves, persistence } = processOptions(
-    options,
-  );
   const field = new Array(width);
   for (let x = 0; x < width; x++) {
     field[x] = new Array(height);
@@ -128,6 +136,7 @@ export function makeRectangle(
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
+      if (scale) field[x][y] = scale(field[x][y]);
     }
   }
   return field;
@@ -136,14 +145,17 @@ export function makeRectangle(
 export function makeSphereSurface(
   circumference: number,
   noise3: Noise3Fn,
-  options: Partial<Options> = {},
+  {
+    amplitude = defaultAmplitude,
+    frequency = defaultFrequency,
+    octaves = defaultOctaves,
+    persistence = defaultPersistence,
+    scale,
+  }: Partial<Options> = {},
 ): number[] {
-  const { amplitude, frequency, octaves, persistence } = processOptions(
-    options,
-  );
   const field = new Array(circumference);
   for (let x = 0; x < circumference; x++) {
-    const circumferenceSemi = circumference / 2
+    const circumferenceSemi = circumference / 2;
     field[x] = new Array(circumferenceSemi);
     for (let y = 0; y < circumferenceSemi; y++) {
       const [nx, ny] = [x / circumference, y / circumferenceSemi];
@@ -159,6 +171,7 @@ export function makeSphereSurface(
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
+      if (scale) field[x][y] = scale(field[x][y]);
     }
   }
   return field;
