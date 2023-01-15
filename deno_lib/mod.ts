@@ -35,8 +35,8 @@ export function makeCuboid(
     persistence = defaultPersistence,
     scale,
   }: Partial<Options> = {},
-): number[][] {
-  const field = new Array(width);
+): number[][][] {
+  const field: number[][][] = new Array(width);
   for (let x = 0; x < width; x++) {
     field[x] = new Array(height);
     for (let y = 0; y < height; y++) {
@@ -67,9 +67,9 @@ export function makeCylinderSurface(
     persistence = defaultPersistence,
     scale,
   }: Partial<Options> = {},
-): number[] {
+): number[][] {
   const radius = circumference / TWO_PI;
-  const field = new Array(circumference);
+  const field: number[][] = new Array(circumference);
   for (let x = 0; x < circumference; x++) {
     field[x] = new Array(height);
     for (let y = 0; y < height; y++) {
@@ -100,7 +100,7 @@ export function makeLine(
     scale,
   }: Partial<Options> = {},
 ): number[] {
-  const field = new Array(length);
+  const field: number[] = new Array(length);
   for (let x = 0; x < length; x++) {
     let value = 0.0;
     for (let octave = 0; octave < octaves; octave++) {
@@ -124,8 +124,8 @@ export function makeRectangle(
     persistence = defaultPersistence,
     scale,
   }: Partial<Options> = {},
-): number[] {
-  const field = new Array(width);
+): number[][] {
+  const field: number[][] = new Array(width);
   for (let x = 0; x < width; x++) {
     field[x] = new Array(height);
     for (let y = 0; y < height; y++) {
@@ -152,8 +152,8 @@ export function makeSphereSurface(
     persistence = defaultPersistence,
     scale,
   }: Partial<Options> = {},
-): number[] {
-  const field = new Array(circumference);
+): number[][] {
+  const field: number[][] = new Array(circumference);
   for (let x = 0; x < circumference; x++) {
     const circumferenceSemi = circumference / 2;
     field[x] = new Array(circumferenceSemi);
