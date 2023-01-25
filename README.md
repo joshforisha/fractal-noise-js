@@ -42,51 +42,53 @@ makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
 ## API
 
 ##### `interface Options { amplitude?; frequency?; octaves?; persistence? }`
-* `amplitude?: number` – Defaults to `1.0`
-* `frequency?: number` – Defaults to `1.0`
-* `octaves?: number` – Defaults to `1`
-* `persistence?: number` – Defaults to `0.5`
+
+- `amplitude?: number` – Defaults to `1.0`
+- `frequency?: number` – Defaults to `1.0`
+- `octaves?: number` – Defaults to `1`
+- `persistence?: number` – Defaults to `0.5`
+- `scale?: (x: number) => number` – Defaults to identity, `(x) => x`
 
 ##### `makeCuboid(width, height, depth, noise3, options?): number[][][]`
 
-* `width: number`
-* `height: number`
-* `depth: number`
-* `noise3: (x: number, y: number, z: number) => number`
-* `options?: Options = {}`
+- `width: number`
+- `height: number`
+- `depth: number`
+- `noise3: (x: number, y: number, z: number) => number`
+- `options?: Options = {}`
 
 Generates a three-dimensional noise field for a rectangular cuboid.
 
 ##### `makeCylinderSurface(circumference, height, noise3, options?): number[][]`
 
-* `circumference: number`
-* `height: number`
-* `noise3: (x: number, y: number, z: number) => number`
-* `options?: Options = {}`
+- `circumference: number`
+- `height: number`
+- `noise3: (x: number, y: number, z: number) => number`
+- `options?: Options = {}`
 
 Generates a two-dimensional noise field formed around a three-dimensional cylinder, such that it is continuous across the x-boundaries.
 
 ##### `makeLine(length, noise1, options?): number[]`
 
-* `length: number`
-* `noise1: (x: number) => number`
-* `options?: Options = {}`
+- `length: number`
+- `noise1: (x: number) => number`
+- `options?: Options = {}`
 
 Generates a one-dimensional noise field.
 
 ##### `makeRectangle(width, height, noise2, options?): number[][]`
 
-* `width: number`
-* `height: number`
-* `noise2: (x: number, y: number) => number`
-* `options?: Options = {}`
+- `width: number`
+- `height: number`
+- `noise2: (x: number, y: number) => number`
+- `options?: Options = {}`
 
 Generates a two-dimensional noise field isolated to `width` and `height` (non-continuous noise).
 
 ##### `makeSphereSurface(circumference, options?): number[][]`
 
-* `circumference: number`
-* `noise3: (x: number, y: number, z: number) => number`
-* `options?: Options = {}`
+- `circumference: number`
+- `noise3: (x: number, y: number, z: number) => number`
+- `options?: Options = {}`
 
 Generates a two-dimensional noise field formed on the surface of a three-dimensional sphere.
