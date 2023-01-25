@@ -27,7 +27,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "denoify": "1.4.2",
-    "typescript": "4.8.4"
+    "denoify": "1.4.5",
+    "typescript": "4.9.4"
   }
 }
