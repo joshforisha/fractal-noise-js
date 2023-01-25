@@ -47,7 +47,7 @@ makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
 - `frequency?: number` – Defaults to `1.0`
 - `octaves?: number` – Defaults to `1`
 - `persistence?: number` – Defaults to `0.5`
-- `scale?: (x: number) => number` – Defaults to identity, `(x) => x`
+- `scale?: (x: number) => number` – Defaults to `undefined`
 
 ##### `makeCuboid(width, height, depth, noise3, options?): number[][][]`
 
