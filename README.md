@@ -2,41 +2,53 @@
 
 Fractal noise functions designed to be used with any noise generation algorithm.
 
-* Deno module: [https://deno.land/x/fractal_noise](https://deno.land/x/fractal_noise)
-* NPM package: [fractal-noise](https://www.npmjs.com/package/fractal-noise)
+- JSR package: [@joshforisha/fractal-noise](https://jsr.io/@joshforisha/fractal-noise)
+- NPM package: [fractal-noise](https://www.npmjs.com/package/fractal-noise)
 
 ## Examples
 
 These images were all generated using basic value noise with `width: 888` and `height: 111`.
 
 ```javascript
-makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.04, octaves: 2 })
+makeCylinderSurface(width, height, valueNoise3D, {
+  frequency: 0.04,
+  octaves: 2,
+});
 ```
+
 ![Low frequency, double octave cylinder](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/cylinder-low-2.png)
 
 ```javascript
-makeCylinderSurface(width, height, valueNoise3D, { frequency: 0.06, octaves: 8 })
+makeCylinderSurface(width, height, valueNoise3D, {
+  frequency: 0.06,
+  octaves: 8,
+});
 ```
+
 ![Medium frequency, high octave cylinder](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/cylinder-medium-8.png)
 
 ```javascript
-makeLine(width, valueNoise1D) // (Replicated across y-axis)
+makeLine(width, valueNoise1D); // (Replicated across y-axis)
 ```
+
 ![Default line](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/line-default.png)
 
 ```javascript
-makeLine(height, valueNoise1D, { frequency: 0.1 }) // (Replicated across x-axis)
+makeLine(height, valueNoise1D, { frequency: 0.1 }); // (Replicated across x-axis)
 ```
+
 ![High frequency line](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/line-high.png)
 
 ```javascript
-makeRectangle(width, height, valueNoise2D)
+makeRectangle(width, height, valueNoise2D);
 ```
+
 ![Default rectangle](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/rectangle-default.png)
 
 ```javascript
-makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 })
+makeRectangle(width, height, valueNoise2D, { frequency: 0.04, octaves: 8 });
 ```
+
 ![Low frequency, high octave rectangle](https://raw.githubusercontent.com/joshforisha/fractal-noise-js/main/images/rectangle-low-8.png)
 
 ## API

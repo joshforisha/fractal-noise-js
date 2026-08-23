@@ -45,7 +45,8 @@ export function makeCuboid(
         let value = 0.0;
         for (let octave = 0; octave < octaves; octave++) {
           const freq = frequency * Math.pow(2, octave);
-          value += noise3(x * freq, y * freq, z * freq) *
+          value +=
+            noise3(x * freq, y * freq, z * freq) *
             (amplitude * Math.pow(persistence, octave));
         }
         field[x][y][z] = value / (2 - 1 / Math.pow(2, octaves - 1));
@@ -79,7 +80,8 @@ export function makeCylinderSurface(
         const nx = x / circumference;
         const rdx = nx * TWO_PI;
         const [a, b] = [radius * Math.sin(rdx), radius * Math.cos(rdx)];
-        value += noise3(a * freq, b * freq, y * freq) *
+        value +=
+          noise3(a * freq, b * freq, y * freq) *
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
@@ -104,7 +106,7 @@ export function makeLine(
   for (let x = 0; x < length; x++) {
     let value = 0.0;
     for (let octave = 0; octave < octaves; octave++) {
-      const freq = frequency * Math.pow(2, octaves);
+      const freq = frequency * Math.pow(2, octave);
       value += noise1(x * freq) * (amplitude * Math.pow(persistence, octave));
     }
     field[x] = value / (2 - 1 / Math.pow(2, octaves - 1));
@@ -132,7 +134,8 @@ export function makeRectangle(
       let value = 0.0;
       for (let octave = 0; octave < octaves; octave++) {
         const freq = frequency * Math.pow(2, octave);
-        value += noise2(x * freq, y * freq) *
+        value +=
+          noise2(x * freq, y * freq) *
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
@@ -167,7 +170,8 @@ export function makeSphereSurface(
       let value = 0.0;
       for (let octave = 0; octave < octaves; octave++) {
         const freq = frequency * Math.pow(2, octave);
-        value += noise3(a * freq, b * freq, d * freq) *
+        value +=
+          noise3(a * freq, b * freq, d * freq) *
           (amplitude * Math.pow(persistence, octave));
       }
       field[x][y] = value / (2 - 1 / Math.pow(2, octaves - 1));
