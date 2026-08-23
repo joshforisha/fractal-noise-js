@@ -1,6 +1,6 @@
 {
   "name": "@joshforisha/fractal-noise",
-  "version": "3.0.0-pre",
+  "version": "3.0.0-pre1",
   "exports": "./src/mod.ts",
   "license": "Unlicense",
   "publish": {
