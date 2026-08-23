@@ -33,7 +33,7 @@
   "scripts": {
     "compile": "tsc",
     "format": "prettier --check .",
-    "test": "tsc --noEmit -p tsconfig.test.json && node --test src",
+    "test": "tsc --noEmit -p tsconfig.test.json && node --test",
     "watch": "tsc --watch"
   },
   "devDependencies": {
